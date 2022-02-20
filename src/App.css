@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-width: fit-content;
 }
 
 .App-logo {
@@ -15,7 +16,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +25,99 @@
   color: white;
 }
 
+.App-body div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-width: fit-content;
+}
+
+.App-table table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App-table td,
+.App-table tr {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.App-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.App-table tr:hover {
+  background-color: #ddd;
+}
+
+.App-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  text-align: center;
+  padding: 15px;
+  background-color: #282c34;
+  color: white;
+}
+
+.App-filters {
+  padding: 15px 0 25px 0;
+}
+
+.App-filters select {
+  padding: 2px 0 2px 0;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.App-wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+/* Tooltip container */
+.App-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted white; /* If you want dots under the hoverable text */
+}
+
+.App-tooltip h3 {
+  margin: 0px;
+  padding: 0px;
+}
+/* Tooltip text */
+.App-tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #282c34;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  margin-left: -93px;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.App-tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +126,32 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
   }
 }
